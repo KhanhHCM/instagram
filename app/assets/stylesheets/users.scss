@@ -9,7 +9,9 @@
     margin: 40px auto;
   }
   .wrapper img{
-    width: 100%;
+    object-fit: cover;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
   }
 }
