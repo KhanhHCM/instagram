@@ -2,7 +2,9 @@
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-        <img src="https://scontent.fsgn4-1.fna.fbcdn.net/v/t1.0-9/29257672_2046304998731396_159956539291992064_n.jpg?_nc_cat=101&_nc_oc=AQkntvrL0gj5I5hvneJP_hUnIZg-xmoqar7tp0fFsLz6t0mTcEHRYjKObQfMwcA74mo&_nc_ht=scontent.fsgn4-1.fna&oh=b9972d877becdb7919f15bd6b416afb0&oe=5CE7AF80">
+        <% if current_user.avatar.attached? %>
+          <%= image_tag @user.avatar %>
+        <% end %>
       </div>
     </div>
 
@@ -14,7 +16,7 @@
         </a>
       </div>
       <ul class="posts">
-        <li><span>12</span> posts</li>
+        <li><span><%= @posts.count %></span> posts</li>
         <li><span>195</span> followers</li>
         <li><span>345</span> following</li>
       </ul>
@@ -44,13 +46,9 @@
 </div>
 
 <div class="user-images">
-  <div class="wrapper">
-    <img src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.0-9/10922631_782685421819578_498807600538694256_n.jpg?_nc_cat=109&_nc_oc=AQkz-vK6n-sRFa0oMKHiI_-DePO2ScDDO2W4ugD0IiW6mGGDajil1mS9YwwXGGfvhQA&_nc_ht=scontent.fsgn3-1.fna&oh=4c829acdc9b45509d60a1eb28cf55b9d&oe=5CE41554">
-  </div>
-  <div class="wrapper">
-    <img src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.0-9/10922631_782685421819578_498807600538694256_n.jpg?_nc_cat=109&_nc_oc=AQkz-vK6n-sRFa0oMKHiI_-DePO2ScDDO2W4ugD0IiW6mGGDajil1mS9YwwXGGfvhQA&_nc_ht=scontent.fsgn3-1.fna&oh=4c829acdc9b45509d60a1eb28cf55b9d&oe=5CE41554">
-  </div>
-  <div class="wrapper">
-    <img src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.0-9/10922631_782685421819578_498807600538694256_n.jpg?_nc_cat=109&_nc_oc=AQkz-vK6n-sRFa0oMKHiI_-DePO2ScDDO2W4ugD0IiW6mGGDajil1mS9YwwXGGfvhQA&_nc_ht=scontent.fsgn3-1.fna&oh=4c829acdc9b45509d60a1eb28cf55b9d&oe=5CE41554">
-  </div>
+  <% @posts.each do |post|%>
+    <div class="wrapper">
+      <%=image_tag post.image %>
+    </div>
+  <% end %>
 </div>
