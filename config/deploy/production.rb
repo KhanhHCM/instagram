@@ -63,5 +63,5 @@
 set :stage, :production
 set :rails_env, :production
 set :deploy_to, "/deploy/apps/instafake"
-set :branch, :config_deploy
 server "54.152.223.248", user: "khanh-deploy", roles: %w(web app db)
+set :branch, `git rev-parse --abbrev-ref HEAD`.chomp
