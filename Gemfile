@@ -62,6 +62,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 group :test do
@@ -72,18 +78,5 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-group :development, :deployment do
-  gem "capistrano",         require: false
-  gem "capistrano-rails",   require: false
-  gem "capistrano-rvm",     require: false
-  gem "capistrano-bundler", require: false
-
-  # net-ssh 4.2 requires the gems below to support ed25519 keys
-  # for deploying via capistrano
-  # more info at https://github.com/net-ssh/net-ssh/issues/478
-  gem "bcrypt_pbkdf", ">= 1.0", "< 2.0", require: false
-  gem "rbnacl", ">= 3.2", "< 5.0", require: false
-  gem "rbnacl-libsodium", require: false
-end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
