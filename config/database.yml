@@ -86,4 +86,4 @@ production:
   <<: *default
   database: instagram_production
   username: postgres
-  password: 
+  password: postgres
