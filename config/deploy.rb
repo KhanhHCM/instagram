@@ -1,5 +1,5 @@
 # Change these
-server '54.211.139.197', port: 7171, roles: [:web, :app, :db], primary: true
+server '54.211.139.197', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:KhanhHCM/instagram.git'
 set :application,     'instafake'
